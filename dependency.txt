@@ -1,0 +1,17 @@
+metagoofil
+dmitry (deep magic)
+whois
+hping3
+nmap
+nikto
+wafw00f
+lbd
+weevely
+wpscan
+httrack
+sqlmap
+hydra
+aircrack-ng
+apktool
+git
+tor
