@@ -5,11 +5,11 @@ A framework for newbie and lazy people
 
 First clone the repository:
 
-git clone https://github.com/MattiaG-afk/Automater.git
+git clone https://github.com/tecado-software/Automater-framework.git
 
 Change the permission of the file:
 
-chmod +x automater.py installer.py updater.py
+chmod 755 automater.py installer.py updater.py
 
 Install the dependency (if you aren't using a Linux OS with apt as package manager there is the dependecy.txt):
 
