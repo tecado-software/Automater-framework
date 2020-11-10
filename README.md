@@ -5,7 +5,7 @@ A framework for newbie and lazy people
 
 First clone the repository:
 
-* git clone [https://github.com/MattiaG-afk/Automater.git](https://github.com/MattiaG-afk/Automater.git)
+* git clone [https://github.com/tecado-software/Automater-framework.git](https://github.com/tecado-software/Automater-framework.git)
 
 Change the permission of the file:
 
