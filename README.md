@@ -1,4 +1,7 @@
 # Automater
+
+![alt text](https://github.com/tecado-software/Automater-framework/blob/main/Example/logo.png "Automater logo")
+
 A framework for newbie and lazy people
 
 # Installation:
