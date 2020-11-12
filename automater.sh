@@ -1,4 +1,4 @@
-#!/bin/bash        rimanenti ==> sqlmap
+#!/bin/bash
 while [[ 1 ]]; do
 	clear
 	echo "   #                                                          "
