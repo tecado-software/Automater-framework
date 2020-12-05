@@ -1,5 +1,6 @@
 metagoofil
 dmitry (deep magic)
+theharvester
 whois
 hping3
 nmap
@@ -12,6 +13,7 @@ httrack
 sqlmap
 hydra
 aircrack-ng
+steghide
 apktool
 git
 tor
