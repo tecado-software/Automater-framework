@@ -29,3 +29,8 @@ launch the program (as usdo):
 
 * rewritten the entire program in bash
 * changed user interface
+
+## Version 3.1.0 (5/12/2020):
+
+* Added new section: anonymity
+* Added new tools: theHarvester, sqlmate, crunch, anonym8, anonsurf, steghide
