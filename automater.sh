@@ -6,32 +6,34 @@ while [[ 1 ]]; do
 	echo " #   #  #    #   #   #    # ##  ##  #  #    #   #      #    # "
 	echo "#     # #    #   #   #    # # ## # #    #   #   #####  #    # "
 	echo "####### #    #   #   #    # #    # ######   #   #      #####  "
-	echo "#     # #    #   #   #    # #    # #    #   #   #      #   #   v.3.0.0"
-	echo "#     #  ####    #    ####  #    # #    #   #   ###### #    #  By @gasmat"
+	echo "#     # #    #   #   #    # #    # #    #   #   #      #   #  v.3.1.0"
+	echo "#     #  ####    #    ####  #    # #    #   #   ###### #    # By @gasmat"
+	echo "    https://github.com/MattiaG-afk/Automater-framework.git    "
 	echo "---------------------------------OPTIONS---------------------------------"
-	echo "|INFORMATION GATHERING  | DATABASE           | USEFUL COMMAND           |"
-	echo "|1.  metagoofil         | 12. sqlmap         | help                     |"
-	echo "|2.  whois              |--------------------| update                   |"
-	echo "|3.  deepmagic          | EXPLOIT            | install                  |"
-	echo "|4.  hping3             | 13. kwetza         | ip                       |"
-	echo "|-----------------------|--------------------| clear                    |"
-	echo "|VULNERABILITY SCANNER  | PASSWORD           | exit                     |"
-	echo "|5.  nmap               | 14. hydra          |                          |"
-	echo "|6.  nikto              | 15. cupp           |                          |"
-	echo "|7.  wafw00f            |--------------------|                          |"
-	echo "|8.  lbd                | WIFI               |                          |"
-	echo "|-----------------------| 16. aircrack-ng    |                          |"
-	echo "|WEBSITE                |                    |                          |"
-	echo "|9.  weevely            |                    |                          |"
-	echo "|10. wpscan             |                    |                          |"
-	echo "|11. httrack            |                    |                          |"
+	echo "| INFORMATION GATHERING  | DATABASE           | ANONYMITY               |"
+	echo "| 1.  metagoofil         | 13. sqlmap         | 20. anonym8             |"
+	echo "| 2.  whois              | 14. sqlmate        | 21. anonsurf            |"
+	echo "| 3.  deepmagic          |--------------------| 22. steghide            |"
+	echo "| 4.  hping3             | EXPLOIT            |-------------------------|"
+	echo "| 5.  theharvester       | 15. kwetza         | USEFUL COMMAND          |"
+	echo "|------------------------|--------------------| update                  |"
+	echo "| VULNERABILITY SCANNER  | PASSWORD           | ip                      |"
+	echo "| 6.  nmap               | 16. hydra          | install                 |"
+	echo "| 7.  nikto              | 17. cupp           | exit                    |"
+	echo "| 8.  wafw00f            | 18. crunch         |                         |"
+	echo "| 9.  lbd                |--------------------|                         |"
+	echo "|------------------------| WIFI               |                         |"
+	echo "| WEBSITE                | 19. aircrack-ng    |                         |"
+	echo "| 10. weevely            |                    |                         |"
+	echo "| 11. wpscan             |                    |                         |"
+	echo "| 12. httrack            |                    |                         |"
 	echo "-------------------------------------------------------------------------"
 	read -p "Automater>>>" input
 	if [[ $input = "1" ]]; then
 		clear
-	  figlet -f banner metagoofil
+	  	figlet -f banner metagoofil
 		domain=""
-	  file_type=""
+	  	file_type=""
 		echo ""
 		echo "This module collects file from the website and shown: owner, the creation date, etc..."
 		echo ""
@@ -77,7 +79,7 @@ while [[ 1 ]]; do
 		done
 	elif [[ $input = "2" ]]; then
 		clear
-	  figlet -f banner whois
+	  	figlet -f banner whois
 		domain=""
 		verbose="no"
 		echo "This module collects info about the website you scan, such as: name, physical address, phone, ecc..."
@@ -177,7 +179,7 @@ while [[ 1 ]]; do
 		interface=""
 		target=""
 		mode=""
-    flood="no"
+    	flood="no"
 		verbose="no"
 		clear
 		figlet -f banner hping3
@@ -264,7 +266,64 @@ while [[ 1 ]]; do
 		done
 	elif [[ $input = "5" ]]; then
 		clear
-	  figlet -f banner nmap
+		figlet -f banner theHarvester
+		domain=""
+		result=""
+		data="all"
+		echo "A tool for gathering e-mail accounts and subdomain names from public sources"
+		echo ""
+		echo "COMMAND             DESCRIPTION"
+		echo "help                Show this help message"
+		echo "show options        Shows the values to set"
+		echo "set <OPTION>        Set the value of the <OPTION>"
+		echo "execute             Execute the tool"
+		echo "back                Go back to the main menu"
+		echo ""
+		while [[ 1 ]]; do
+			read -p "Automater/theHarvester>>>" command
+			if [[ $command = "help" ]]; then
+				echo "A tool for gathering e-mail accounts and subdomain names from public sources"
+				echo ""
+				echo "COMMAND             DESCRIPTION"
+				echo "help                Show this help message"
+				echo "show options        Shows the values to set"
+				echo "set <OPTION>        Set the value of the <OPTION>"
+				echo "execute             Execute the tool"
+				echo "back                Go back to the main menu"
+				echo ""
+			elif [[ $command = "show options" ]]; then
+				echo "OPTION              REQUIRED              CURRENT VALUE"
+				echo "domain              yes                   $domain"
+				echo "limit result        yes                   $result"
+				echo "data source         no                    $data"
+				echo ""
+			elif [[ $command = *"set"* ]]; then
+				module=${command/#"set "}
+				if [[ $module = *"domain"* ]]; then
+					domain=${module/#"domain "}
+					echo "domain ==> $domain"
+				elif [[ $module = *"limit result"* ]]; then
+					result=${module/#"limit result "}
+					echo "limit result ==> $result"
+				elif [[ $module = *"data source"* ]]; then
+					data=${module/#"data source "}
+					if [[ $data = "baidu" || $data = "bing" || $data = "bingapi" || $data = "dogpile" || $data = "google" || $data = "googleCSE" || $data = "googleplus" || $data = "google-profiles" || $data = "linkedin" || $data = "pgp" || $data = "twitter" || $data = "vhost" || $data = "virustotal" || $data = "threatcrowd" || $data = "crtsh" || $data = "netcraft" || $data = "yahoo" || $data = "all" ]]; then
+						echo "data source ==> $data"
+					else
+						echo "The option data source can be only baidu, bing, bingapi, dogpile, google, googleCSE, googleplus, google-profiles, linkedin, pgp, twitter, vhost, virustotal, threatcrowd, crtsh, netcraft, yahoo or all"
+						data="all"
+					fi
+				fi
+			elif [[ $command = "execute" ]]; then
+				echo "[+] Executing the command: theharvester -d $domain -l $result -b $data"
+				eval "theharvester -d $domain -l $result -b $data"
+			elif [[ $command = "back" ]]; then
+				break
+			fi
+		done
+	elif [[ $input = "6" ]]; then
+		clear
+	  	figlet -f banner nmap
 		echo "This tool is a powerful scanner of open port, services, etc..."
 		echo ""
 		echo "COMMAND             DESCRIPTION"
@@ -361,7 +420,7 @@ while [[ 1 ]]; do
 							eval "nmap --script vulner $target"
 						elif [[ $command = "back" ]]; then
 							clear
-						  figlet -f banner nmap
+						  	figlet -f banner nmap
 							echo "This tool is a powerful scanner of open port, services, etc..."
 							echo ""
 							echo "COMMAND             DESCRIPTION"
@@ -572,7 +631,7 @@ while [[ 1 ]]; do
 							eval "nmap -p$port --script http-fileupload-exploiter.nse $target"
 						elif [[ $command = "back" ]]; then
 							clear
-						  figlet -f banner nmap
+						  	figlet -f banner nmap
 							echo "This tool is a powerful scanner of open port, services, etc..."
 							echo ""
 							echo "COMMAND             DESCRIPTION"
@@ -589,7 +648,7 @@ while [[ 1 ]]; do
 					figlet -f banner nmap
 					target=""
 					port="80"
-				  file=""
+				  	file=""
 					directory=""
 					echo "-----------UPLOAD----------"
 					echo "Uploads a local file to a remote web server directory"
@@ -640,7 +699,7 @@ while [[ 1 ]]; do
 							eval "nmap -p$port $target --script http-put --script-args http-put.url='$directory',http-put.file='$file'"
 						elif [[ $command = "back" ]]; then
 							clear
-						  figlet -f banner nmap
+						  	figlet -f banner nmap
 							echo "This tool is a powerful scanner of open port, services, etc..."
 							echo ""
 							echo "COMMAND             DESCRIPTION"
@@ -657,7 +716,7 @@ while [[ 1 ]]; do
 				break
 			fi
 		done
-	elif [[ $input = "6" ]]; then
+	elif [[ $input = "7" ]]; then
 		clear
 		figlet -f banner nikto
 		target=""
@@ -704,11 +763,11 @@ while [[ 1 ]]; do
 				break
 			fi
 		done
-	elif [[ $input = "7" ]]; then
+	elif [[ $input = "8" ]]; then
 		clear
 		figlet -f banner wafw00f
 		domain=""
-		list_all="no"
+		find_all="no"
 		verbose="no"
 		echo "This module scan a domain with the aim of find a Web Application Firewall (WAF)"
 		echo ""
@@ -734,20 +793,20 @@ while [[ 1 ]]; do
 			elif [[ $command = "show options" ]]; then
 				echo "OPTION              REQUIRED              CURRENT VALUE"
 				echo "domain              yes                   $domain"
-				echo "list all            no                    $list_all"
+				echo "find all            no                    $find_all"
 				echo "verbose             no                    $verbose"
 			elif [[ $command = *"set"* ]]; then
 				module=${command/#"set "}
 				if [[ $module = *"domain"* ]]; then
 					domain=${module/#"domain "}
 					echo "domain ==> $domain"
-				elif [[ $module = *"list all"* ]]; then
-					list_all=${module/#list_all }
-					if [[ $list_all = "yes" || $list_all = "no" ]]; then
-						echo "list all ==> $list_all"
+				elif [[ $module = *"find all"* ]]; then
+					find_all=${module/#find_all }
+					if [[ $find_all = "yes" || $find_all = "no" ]]; then
+						echo "find all ==> $find_all"
 					else
-						echo "The option list all can be only yes or no"
-						list_all="no"
+						echo "The option find all can be only yes or no"
+						find_all="no"
 					fi
 				elif [[ $module = *"verbose"* ]]; then
 					verbose=${module/#verbose }
@@ -762,7 +821,7 @@ while [[ 1 ]]; do
 				command="wafw00f"
 				if [[ $verbose = "yes" ]]; then
 					command="$command -v"
-				elif [[ $list_all ]]; then
+				elif [[ $find_all = "yes" ]]; then
 					command="$command -a"
 				fi
 				command="$command $domain"
@@ -772,7 +831,7 @@ while [[ 1 ]]; do
 				break
 			fi
 		done
-	elif [[ $input = "8" ]]; then
+	elif [[ $input = "9" ]]; then
 		clear
 		figlet -f banner lbd
 		domain=""
@@ -809,7 +868,7 @@ while [[ 1 ]]; do
 					domain=${module/#"domain "}
 					echo "domain ==> $domain"
 				elif [[ $module = *"port"* ]]; then
-					port=${module/#port }
+					port=${module/#"port "}
 					echo "port ==> $port"
 				fi
 			elif [[ $command = "execute" ]]; then
@@ -819,9 +878,9 @@ while [[ 1 ]]; do
 				break
 			fi
 		done
-	elif [[ $input = "9" ]]; then
+	elif [[ $input = "10" ]]; then
 		clear
-	  figlet -f banner weevely
+	  	figlet -f banner weevely
 		echo "This tool generate a webshell for website that use PHP."
 		echo ""
 		echo "COMMAND             DESCRIPTION"
@@ -852,7 +911,7 @@ while [[ 1 ]]; do
 					clear
 					figlet -f banner weevely
 					password=""
-				  file=""
+				  	file=""
 					echo "-------------------GENERATE--------------------"
 					echo "generate the webshell"
 					echo ""
@@ -894,7 +953,7 @@ while [[ 1 ]]; do
 							eval "weevely generate $password $file"
 						elif [[ $command = "back" ]]; then
 							clear
-						  figlet -f banner weevely
+						  	figlet -f banner weevely
 							echo "This tool generate a webshell for website that use PHP."
 							echo ""
 							echo "COMMAND             DESCRIPTION"
@@ -922,7 +981,7 @@ while [[ 1 ]]; do
 					echo "back                Go back to the weevely menu"
 					echo ""
 					while [[ 1 ]]; do
-						read -p "Automater/weevely/use>>>" command
+						read -p "Automater/weevely/run>>>" command
 						if [[ $command = "help" ]]; then
 							echo "Run the uploaded shell"
 							echo ""
@@ -942,17 +1001,17 @@ while [[ 1 ]]; do
 							module=${command/#"set "}
 							if [[ $module = *"url"* ]]; then
 								url=${module/#"url "}
-								echo "url ==> $password"
-							elif [[ $module = *"file"* ]]; then
-							  file=${module/#file }
-								echo "file ==> $file"
+								echo "url ==> $url"
+							elif [[ $module = *"password"* ]]; then
+							  file=${module/#password }
+								echo "password ==> $password"
 							fi
 						elif [[ $command = "execute" ]]; then
-							echo "[+] Executing the command: weevely generate $password $file"
-							eval "weevely generate $password $file"
+							echo "[+] Executing the command: weevely run $url $password"
+							eval "weevely run $url $password"
 						elif [[ $command = "back" ]]; then
 							clear
-						  figlet -f banner weevely
+						  	figlet -f banner weevely
 							echo "This tool generate a webshell for website that use PHP."
 							echo ""
 							echo "COMMAND             DESCRIPTION"
@@ -969,7 +1028,7 @@ while [[ 1 ]]; do
 				break
 			fi
 		done
-	elif [[ $input = "10" ]]; then
+	elif [[ $input = "11" ]]; then
 		clear
 		figlet -f banner wpscan
 		echo "This tool find and exploit vulnerabilities of wordpress website and blog."
@@ -1178,9 +1237,9 @@ while [[ 1 ]]; do
 				break
 			fi
 		done
-	elif [[ $input = "11" ]]; then
+	elif [[ $input = "12" ]]; then
 		clear
-	  figlet -f banner httrack
+	  	figlet -f banner httrack
 		website=""
 		directory=""
 		verbose="no"
@@ -1240,9 +1299,9 @@ while [[ 1 ]]; do
 				break
 			fi
 		done
-	elif [[ $input = "12" ]]; then
+	elif [[ $input = "13" ]]; then
 		clear
-	  figlet -f banner sqlmap
+	  	figlet -f banner sqlmap
 		echo "This tool search and exploit sql vulnerabilities."
 		echo ""
 		echo "COMMAND             DESCRIPTION"
@@ -1329,7 +1388,7 @@ while [[ 1 ]]; do
 							eval "$command"
 						elif [[ $command = "back" ]]; then
 							clear
-						  figlet -f banner sqlmap
+						  	figlet -f banner sqlmap
 							echo "This tool search and exploit sql vulnerabilities."
 							echo ""
 							echo "COMMAND             DESCRIPTION"
@@ -1399,7 +1458,7 @@ while [[ 1 ]]; do
 							eval "$command"
 						elif [[ $command = "back" ]]; then
 							clear
-						  figlet -f banner sqlmap
+						  	figlet -f banner sqlmap
 							echo "This tool search and exploit sql vulnerabilities."
 							echo ""
 							echo "COMMAND             DESCRIPTION"
@@ -1571,9 +1630,325 @@ while [[ 1 ]]; do
 				break
 			fi
 		done
-	elif [[ $input = "13" ]]; then
+	elif [[ $input = "14" ]]; then
 		clear
-	  figlet -f banner kwetza
+	  	figlet -f banner sqlmate
+		echo "An addition for sqlmap."
+		echo ""
+		echo "COMMAND             DESCRIPTION"
+		echo "help                Show this help message"
+		echo "show modules        Shows the modules"
+		echo "use <MODULE>        Use the <MODULE>"
+		echo "back                Go back to the main menu"
+		echo ""
+		while [[ 1 ]]; do
+			read -p "Automater/sqlmate>>>" command
+			if [[ $command = "help" ]]; then
+				echo "An addition for sqlmap."
+				echo ""
+				echo "COMMAND             DESCRIPTION"
+				echo "help                Show this help message"
+				echo "show modules        Shows the modules"
+				echo "use <MODULE>        Use the <MODULE>"
+				echo "back                Go back to the main menu"
+				echo ""
+			elif [[ $command = "show modules" ]]; then
+				echo "MODULE              DESCRIPTION"
+				echo "dork                Search for vulnerable site using dork"
+				echo "hash                Crack hash"
+				echo "list                Import and crack hashes from a txt file"
+				echo "dump                Get dorks. Specify dumping level. Level 1 = 20 dorks"
+				echo "admin               Find admin panel"
+				echo ""
+			elif [[ $command = *"use"* ]]; then
+				module=${command/#"use "}
+				if [[ $module = "dork" ]]; then
+					clear
+					figlet -f banner sqlmate
+					dork=""
+					echo "---------------------DORK----------------------"
+					echo "Search for vulnerable site using dork (classic: inurl:”index.php?id=”)"
+					echo ""
+					echo "COMMAND             DESCRIPTION"
+					echo "help                Show this help message"
+					echo "show options        Shows the values to set"
+					echo "set <OPTION>        Set the value of the <OPTION>"
+					echo "execute             Execute the tool"
+					echo "back                Go back to the sqlmate menu"
+					echo ""
+					while [[ 1 ]]; do
+						read -p "Automater/sqlmate/dork>>>" command
+						if [[ $command = "help" ]]; then
+							echo "Search for vulnerable site using dork (classic: inurl:”index.php?id=”)"
+							echo ""
+							echo "COMMAND             DESCRIPTION"
+							echo "help                Show this help message"
+							echo "show options        Shows the values to set"
+							echo "set <OPTION>        Set the value of the <OPTION>"
+							echo "execute             Execute the tool"
+							echo "back                Go back to the sqlmate menu"
+							echo ""
+						elif [[ $command = "show options" ]]; then
+							echo "OPTION              REQUIRED              CURRENT VALUE"
+							echo "dork                yes                   $dork"
+							echo ""
+						elif [[ $command = *"set"* ]]; then
+							module=${command/#"set "}
+							if [[ $module = *"dork"* ]]; then
+								dork=${module/#"dork "}
+								echo "dork ==> $dork"
+							fi
+						elif [[ $command = "execute" ]]; then
+							echo "[+] Executing the command: python Tools/sqlmate/sqlmate --dork $dork"
+							eval "python Tools/sqlmate/sqlmate --dork $dork"
+						elif [[ $command = "back" ]]; then
+							clear
+						  	figlet -f banner sqlmate
+							echo "An addition for sqlmap."
+							echo ""
+							echo "COMMAND             DESCRIPTION"
+							echo "help                Show this help message"
+							echo "show modules        Shows the modules"
+							echo "use <MODULE>        Use the <MODULE>"
+							echo "back                Go back to the main menu"
+							echo ""
+							break
+						fi
+					done
+				elif [[ $module = "hash" ]]; then
+					clear
+					figlet -f banner sqlmate
+					hash=""
+					echo "---------------------HASH----------------------"
+					echo "'Crack' a hash in 5 secs"
+					echo ""
+					echo "COMMAND             DESCRIPTION"
+					echo "help                Show this help message"
+					echo "show options        Shows the values to set"
+					echo "set <OPTION>        Set the value of the <OPTION>"
+					echo "execute             Execute the tool"
+					echo "back                Go back to the sqlmate menu"
+					echo ""
+					while [[ 1 ]]; do
+						read -p "Automater/sqlmate/hash>>>" command
+						if [[ $command = "help" ]]; then
+							echo "'Crack' a hash in 5 secs"
+							echo ""
+							echo "COMMAND             DESCRIPTION"
+							echo "help                Show this help message"
+							echo "show options        Shows the values to set"
+							echo "set <OPTION>        Set the value of the <OPTION>"
+							echo "execute             Execute the tool"
+							echo "back                Go back to the sqlmate menu"
+							echo ""
+						elif [[ $command = "show options" ]]; then
+							echo "OPTION              REQUIRED              CURRENT VALUE"
+							echo "hash                yes                   $hash"
+							echo ""
+						elif [[ $command = *"set"* ]]; then
+							module=${command/#"set "}
+							if [[ $module = *"hash"* ]]; then
+								hash=${module/#"hash "}
+								echo "hash ==> $hash"
+							fi
+						elif [[ $command = "execute" ]]; then
+							echo "[+] Executing the command: python Tools/sqlmate/sqlmate --hash $hash"
+							eval "python Tools/sqlmate/sqlmate --hash $hash"
+						elif [[ $command = "back" ]]; then
+							clear
+						  	figlet -f banner sqlmate
+							echo "An addition for sqlmap."
+							echo ""
+							echo "COMMAND             DESCRIPTION"
+							echo "help                Show this help message"
+							echo "show modules        Shows the modules"
+							echo "use <MODULE>        Use the <MODULE>"
+							echo "back                Go back to the main menu"
+							echo ""
+							break
+						fi
+					done
+				elif [[ $module = "list" ]]; then
+					clear
+					figlet -f banner sqlmate
+					file=""
+					echo "---------------------LIST----------------------"
+					echo "Import and crack hashes from a txt file"
+					echo ""
+					echo "COMMAND             DESCRIPTION"
+					echo "help                Show this help message"
+					echo "show options        Shows the values to set"
+					echo "set <OPTION>        Set the value of the <OPTION>"
+					echo "execute             Execute the tool"
+					echo "back                Go back to the sqlmate menu"
+					echo ""
+					while [[ 1 ]]; do
+						read -p "Automater/sqlmate/list>>>" command
+						if [[ $command = "help" ]]; then
+							echo "Import and crack hashes from a txt file"
+							echo ""
+							echo "COMMAND             DESCRIPTION"
+							echo "help                Show this help message"
+							echo "show options        Shows the values to set"
+							echo "set <OPTION>        Set the value of the <OPTION>"
+							echo "execute             Execute the tool"
+							echo "back                Go back to the sqlmate menu"
+							echo ""
+						elif [[ $command = "show options" ]]; then
+							echo "OPTION              REQUIRED              CURRENT VALUE"
+							echo "file path           yes                   $file"
+							echo ""
+						elif [[ $command = *"set"* ]]; then
+							module=${command/#"set "}
+							if [[ $module = *"file path"* ]]; then
+								file=${module/#"file "}
+								echo "file ==> $file"
+							fi
+						elif [[ $command = "execute" ]]; then
+							echo "[+] Executing the command: python Tools/sqlmate/sqlmate --list $file"
+							eval "python Tools/sqlmate/sqlmate --list $file"
+						elif [[ $command = "back" ]]; then
+							clear
+						  	figlet -f banner sqlmate
+							echo "An addition for sqlmap."
+							echo ""
+							echo "COMMAND             DESCRIPTION"
+							echo "help                Show this help message"
+							echo "show modules        Shows the modules"
+							echo "use <MODULE>        Use the <MODULE>"
+							echo "back                Go back to the main menu"
+							echo ""
+							break
+						fi
+					done
+				elif [[ $module = "dump" ]]; then
+					clear
+					figlet -f banner sqlmate
+					level="" 
+					echo "---------------------DUMP----------------------"
+					echo "Get dorks. Specify dumping level. Level 1 = 20 dorks"
+					echo ""
+					echo "COMMAND             DESCRIPTION"
+					echo "help                Show this help message"
+					echo "show options        Shows the values to set"
+					echo "set <OPTION>        Set the value of the <OPTION>"
+					echo "execute             Execute the tool"
+					echo "back                Go back to the sqlmate menu"
+					echo ""
+					while [[ 1 ]]; do
+						read -p "Automater/sqlmate/dump>>>" command
+						if [[ $command = "help" ]]; then
+							echo "Get dorks. Specify dumping level. Level 1 = 20 dorks"
+							echo ""
+							echo "COMMAND             DESCRIPTION"
+							echo "help                Show this help message"
+							echo "show options        Shows the values to set"
+							echo "set <OPTION>        Set the value of the <OPTION>"
+							echo "execute             Execute the tool"
+							echo "back                Go back to the sqlmate menu"
+							echo ""
+						elif [[ $command = "show options" ]]; then
+							echo "OPTION              REQUIRED              CURRENT VALUE"
+							echo "level               yes                   $level (1-184)"
+							echo ""
+						elif [[ $command = *"set"* ]]; then
+							module=${command/#"set "}
+							if [[ $module = *"level"* ]]; then
+								level=${module/#"level "}
+								echo "level ==> $level"
+							fi
+						elif [[ $command = "execute" ]]; then
+							echo "[+] Executing the command: python Tools/sqlmate/sqlmate --dump $level"
+							eval "python Tools/sqlmate/sqlmate --dump $level"
+						elif [[ $command = "back" ]]; then
+							clear
+						  	figlet -f banner sqlmate
+							echo "An addition for sqlmap."
+							echo ""
+							echo "COMMAND             DESCRIPTION"
+							echo "help                Show this help message"
+							echo "show modules        Shows the modules"
+							echo "use <MODULE>        Use the <MODULE>"
+							echo "back                Go back to the main menu"
+							echo ""
+							break
+						fi
+					done
+				elif [[ $module = "admin" ]]; then
+					clear
+					figlet -f banner sqlmate
+					admin="" 
+					type=" "
+					echo "---------------------ADMIN---------------------"
+					echo "Find admin panel of website"
+					echo ""
+					echo "COMMAND             DESCRIPTION"
+					echo "help                Show this help message"
+					echo "show options        Shows the values to set"
+					echo "set <OPTION>        Set the value of the <OPTION>"
+					echo "execute             Execute the tool"
+					echo "back                Go back to the sqlmate menu"
+					echo ""
+					while [[ 1 ]]; do
+						read -p "Automater/sqlmate/dump>>>" command
+						if [[ $command = "help" ]]; then
+							echo "Find admin panel of website"
+							echo ""
+							echo "COMMAND             DESCRIPTION"
+							echo "help                Show this help message"
+							echo "show options        Shows the values to set"
+							echo "set <OPTION>        Set the value of the <OPTION>"
+							echo "execute             Execute the tool"
+							echo "back                Go back to the sqlmate menu"
+							echo ""
+						elif [[ $command = "show options" ]]; then
+							echo "OPTION              REQUIRED              CURRENT VALUE"
+							echo "admin               yes                   $admin"
+							echo "type                no                    $type"
+							echo ""
+						elif [[ $command = *"set"* ]]; then
+							module=${command/#"set "}
+							if [[ $module = *"admin"* ]]; then
+								admin=${module/#"admin "}
+								echo "admin ==> $admin"
+							elif [[ $module = *"type"* ]]; then
+								type=${module/#"type "}
+								if [[ $type = " " || $type = "html" || $type = "php" || $type = "asp" ]]; then
+									echo "type ==> $type"
+								else
+									echo "The option type can be only nothing, html, asp or php"
+									type=""
+								fi
+							fi
+						elif [[ $command = "execute" ]]; then
+							command="python Tools/sqlmate/sqlmate --admin $admin"
+							if [[ $type != " " ]]; then
+								command="$command --type $type"
+							fi
+							echo "[+] Executing the command: $command"
+							eval "$command"
+						elif [[ $command = "back" ]]; then
+							clear
+						  	figlet -f banner sqlmate
+							echo "An addition for sqlmap."
+							echo ""
+							echo "COMMAND             DESCRIPTION"
+							echo "help                Show this help message"
+							echo "show modules        Shows the modules"
+							echo "use <MODULE>        Use the <MODULE>"
+							echo "back                Go back to the main menu"
+							echo ""
+							break
+						fi
+					done
+				fi
+			elif [[ $command = "back" ]]; then
+				break
+			fi
+		done
+	elif [[ $input = "15" ]]; then
+		clear
+	  	figlet -f banner kwetza
 		apk=""
 		lhost=""
 		lport=""
@@ -1643,9 +2018,9 @@ while [[ 1 ]]; do
 				break
 			fi
 		done
-	elif [[ $input = "14" ]]; then
+	elif [[ $input = "16" ]]; then
 		clear
-	  figlet -f banner hydra
+	  	figlet -f banner hydra
 		host=""
 		login=""
 		wordlist=""
@@ -1669,8 +2044,8 @@ while [[ 1 ]]; do
 				echo "help                Show this help message"
 				echo "show options        Shows the values to set"
 				echo "set <OPTION>        Set the value of the <OPTION>"
-				echo "execute             Execute the tool"
 				echo "back                Go back to the main menu"
+				echo "execute             Execute the tool"
 				echo ""
 			elif [[ $command = "show options" ]]; then
 				echo "OPTION              REQUIRED              CURRENT VALUE"
@@ -1720,7 +2095,7 @@ while [[ 1 ]]; do
 				break
 			fi
 		done
-	elif [[ $input = "15" ]]; then
+	elif [[ $input = "17" ]]; then
 		clear
 		figlet -f banner cupp
 		echo "Common User Password Profiler."
@@ -1767,8 +2142,6 @@ while [[ 1 ]]; do
 							echo ""
 							echo "COMMAND             DESCRIPTION"
 							echo "help                Show this help message"
-							echo "show options        Shows the values to set"
-							echo "set <OPTION>        Set the value of the <OPTION>"
 							echo "execute             Execute the tool"
 							echo "back                Go back to the cupp menu"
 							echo ""
@@ -1797,6 +2170,8 @@ while [[ 1 ]]; do
 					echo ""
 					echo "COMMAND             DESCRIPTION"
 					echo "help                Show this help message"
+					echo "show options        Shows the values to set"
+					echo "set <OPTION>        Set the value of the <OPTION>"
 					echo "execute             Execute the tool"
 					echo "back                Go back to the cupp menu"
 					echo ""
@@ -1834,7 +2209,68 @@ while [[ 1 ]]; do
 				break
 			fi
 		done
-	elif [[ $input = "16" ]]; then
+	elif [[ $input = "18" ]]; then
+		clear
+		figlet -f banner crunch
+		minlength=""
+		maxlength=""
+		character=""
+		output=""
+		echo "Generate a wordlist with a minimun and maximum length and using the given character"
+		echo ""
+		echo "COMMAND             DESCRIPTION"
+		echo "help                Show this help message"
+		echo "show options        Shows the values to set"
+		echo "set <OPTION>        Set the value of the <OPTION>"
+		echo "execute             Execute the tool"
+		echo "back                Go back to the main menu"
+		echo ""
+		while [[ 1 ]]; do
+			read -p "Automater/crunch>>>" command
+			if [[ $command = "help" ]]; then
+				echo "Generate a wordlist with a minimun and maximum length and using the given character"
+				echo ""
+				echo "COMMAND             DESCRIPTION"
+				echo "help                Show this help message"
+				echo "show options        Shows the values to set"
+				echo "set <OPTION>        Set the value of the <OPTION>"
+				echo "execute             Execute the tool"
+				echo "back                Go back to the main menu"
+				echo ""
+			elif [[ $command = "show options" ]]; then
+				echo "OPTION              REQUIRED              CURRENT VALUE"
+				echo "min length          yes                   $minlength"
+				echo "max length          yes                   $maxlength"
+				echo "character           yes                   $character"
+				echo "output file         recommended           $output"
+				echo ""
+			elif [[ $command = *"set"* ]]; then
+				module=${command/#"set "}
+				if [[ $module = *"min length"* ]]; then
+					minlength=${module/#"min length "}
+					echo "min length ==> $minlength"
+				elif [[ $module = *"max length"* ]]; then
+					maxlength=${module/#"max length "}
+					echo "max length ==> $maxlength"
+				elif [[ $module = *"character"* ]]; then
+					character=${module/#"character "}
+					echo "character ==> $character"
+				elif [[ $module = *"output file"* ]]; then
+					maxlength=${module/#"output file "}
+					echo "output file ==> $output"
+				fi
+			elif [[ $command = "execute" ]]; then
+				command="crunch $minlength $maxlength $character"
+				if [[ $output != "" ]]; then
+					command="$command -o $output"
+				fi
+				echo "[+] Executing the command: $command"
+				eval "$command"
+			elif [[ $command = "back" ]]; then
+				break
+			fi
+		done
+	elif [[ $input = "19" ]]; then
 		clear
 		figlet -f banner aircrack-ng
 		echo "Scan for acces point and make a deauth attack."
@@ -2013,39 +2449,603 @@ while [[ 1 ]]; do
 				break
 			fi
 		done
-	elif [[ $input = "help" ]]; then
-			echo "   #                                                          "
-			echo "  # #   #    # #####  ####  #    #   ##   ##### ###### #####  "
-			echo " #   #  #    #   #   #    # ##  ##  #  #    #   #      #    # "
-			echo "#     # #    #   #   #    # # ## # #    #   #   #####  #    # "
-			echo "####### #    #   #   #    # #    # ######   #   #      #####  "
-			echo "#     # #    #   #   #    # #    # #    #   #   #      #   #   v.3.0.0"
-			echo "#     #  ####    #    ####  #    # #    #   #   ###### #    #  By @gasmat"
-			echo "---------------------------------OPTIONS---------------------------------"
-			echo "|INFORMATION GATHERING  | DATABASE           | USEFUL COMMAND           |"
-			echo "|1.  metagoofil         | 12. sqlmap         | help                     |"
-			echo "|2.  whois              |--------------------| update                   |"
-			echo "|3.  deepmagic          | EXPLOIT            | ip                       |"
-			echo "|4.  hping3             | 13. kwetza         |                          |"
-			echo "|-----------------------|--------------------|                          |"
-			echo "|VULNERABILITY SCANNER  | PASSWORD           |                          |"
-			echo "|5.  nmap               | 14. hydra          |                          |"
-			echo "|6.  nikto              | 15. cupp           |                          |"
-			echo "|7.  wafw00f            |--------------------|                          |"
-			echo "|8.  lbd                | WIFI               |                          |"
-			echo "|-----------------------| 16. aircrack-ng    |                          |"
-			echo "|WEBSITE                |                    |                          |"
-			echo "|9.  weevely            |                    |                          |"
-			echo "|10. wpscan             |                    |                          |"
-			echo "|11. httrack            |                    |                          |"
-			echo "-------------------------------------------------------------------------"
+	elif [[ $input = "20" ]]; then
+		clear
+		figlet -f banner anonym8
+		echo "Full anonymize your system"
+		echo ""
+		echo "COMMAND             DESCRIPTION"
+		echo "help                Show this help message"
+		echo "show modules        Shows the modules"
+		echo "use <MODULE>        Use the <MODULE>"
+		echo "back                Go back to the main menu"
+		echo ""
+		while [[ 1 ]]; do
+			read -p "Automater/anonym8>>>" command
+			if [[ $command = "help" ]]; then
+				echo "Full anonymize your system"
+				echo ""
+				echo "COMMAND             DESCRIPTION"
+				echo "help                Show this help message"
+				echo "ip                  Show ip status"
+				echo "arm                 Start Monitoring Anonymizing Relay"
+				echo "wipe                Cache, RAM & swap-space cleaner"
+				echo "show modules        Shows the modules"
+				echo "use <MODULE>        Use the <MODULE>"
+				echo "back                Go back to the main menu"
+				echo ""
+			elif [[ $command = "ip" ]]; then
+				echo "[+] Executing the command: anonym8 status_ip"
+				eval "anonym8 status_ip"
+			elif [[ $command = "arm" ]]; then
+				echo "[+] Executing the command: anonym8 start_arm"
+				eval "anonym8 start_arm"
+			elif [[ $command = "wipe" ]]; then
+				echo "[+] Executing the command: anonym8 wipe"
+				eval "anonym8 wipe"
+			elif [[ $command = "show modules" ]]; then
+				echo "MODULE              DESCRIPTION"
+				echo "tor                 Proxy tunnel through Tor"
+				echo "i2p                 Proxy tunnel through i2p"
+				echo "privoxy             Proxy tunnel through privoxy"
+				echo "polipo              Proxy tunnel through polipo"
+				echo "macchanger          Change mac address"
+				echo "hostname            Change hostname"
+				echo ""
+			elif [[ $command = *"use"* ]]; then
+				module=${command/#"use "}
+				if [[ $module = "tor" ]]; then
+					clear
+					figlet -f banner anonsurf
+					echo "--------------------------TOR--------------------------"
+					echo "Start and stop proxy tunnel through Tor"
+					echo ""
+					echo "COMMAND             DESCRIPTION"
+					echo "help                Show this help message"
+					echo "start               Start Tor"
+					echo "stop                Stop Tor"
+					echo "change              Change Tor identity"
+					echo "status              Show Tor status"
+					echo "back                Go back to the anonym8 menu"
+					echo ""
+					while [[ 1 ]]; do
+						read -p "Automater/anonsurf/tor>>>" command
+						if [[ $command = "help" ]]; then
+							echo "Start and stop proxy tunnel through Tor"
+							echo ""
+							echo "COMMAND             DESCRIPTION"
+							echo "help                Show this help message"
+							echo "start               Start Tor"
+							echo "stop                Stop Tor"
+							echo "change              Change Tor identity"
+							echo "status              Show Tor status"
+							echo "back                Go back to the anonym8 menu"
+							echo ""
+						elif [[ $command = "start" ]]; then
+							echo "[+] Executing the command: anonym8 start"
+							eval "anonym8 start"
+						elif [[ $command = "stop" ]]; then
+							echo "[+] Executing the command: anonym8 stop"
+							eval "anonym8 stop"
+						elif [[ $command = "change" ]]; then
+							echo "[+] Executing the command: anonym8 change"
+							eval "anonym8 change"
+						elif [[ $command = "status" ]]; then
+							echo "[+] Executing the command: anonym8 status"
+							eval "anonym8 status"
+						elif [[ $command = "back" ]]; then
+							clear
+							figlet -f banner anonym8
+							echo "Full anonymize your system"
+							echo ""
+							echo "COMMAND             DESCRIPTION"
+							echo "help                Show this help message"
+							echo "show modules        Shows the modules"
+							echo "use <MODULE>        Use the <MODULE>"
+							echo "back                Go back to the main menu"
+							echo ""
+							break
+						fi
+					done
+				elif [[ $module = "i2p" ]]; then
+					clear
+					figlet -f banner anonsurf
+					echo "--------------------------I2P--------------------------"
+					echo "Start and stop proxy tunnel through I2P"
+					echo ""
+					echo "COMMAND             DESCRIPTION"
+					echo "help                Show this help message"
+					echo "start               Start I2P"
+					echo "stop                Stop I2P"
+					echo "status              Show I2P status"
+					echo "back                Go back to the anonym8 menu"
+					echo ""
+					while [[ 1 ]]; do
+						read -p "Automater/anonsurf/i2p>>>" command
+						if [[ $command = "help" ]]; then
+							echo "Start and stop proxy tunnel through I2P"
+							echo ""
+							echo "COMMAND             DESCRIPTION"
+							echo "help                Show this help message"
+							echo "start               Start I2P"
+							echo "stop                Stop I2P"
+							echo "status              Show I2P status"
+							echo "back                Go back to the anonym8 menu"
+							echo ""
+						elif [[ $command = "start" ]]; then
+							echo "[+] Executing the command: anonym8 start_i2p"
+							eval "anonym8 start_i2p"
+						elif [[ $command = "stop" ]]; then
+							echo "[+] Executing the command: anonym8 stop_i2p"
+							eval "anonym8 stop_i2p"
+						elif [[ $command = "status" ]]; then
+							echo "[+] Executing the command: anonym8 status_i2p"
+							eval "anonym8 status_i2p"
+						elif [[ $command = "back" ]]; then
+							clear
+							figlet -f banner anonym8
+							echo "Full anonymize your system"
+							echo ""
+							echo "COMMAND             DESCRIPTION"
+							echo "help                Show this help message"
+							echo "show modules        Shows the modules"
+							echo "use <MODULE>        Use the <MODULE>"
+							echo "back                Go back to the main menu"
+							echo ""
+							break
+						fi
+					done
+				elif [[ $module = "privoxy" ]]; then
+					clear
+					figlet -f banner anonsurf
+					echo "------------------------PRIVOXY------------------------"
+					echo "Start and stop proxy tunnel through privoxy"
+					echo ""
+					echo "COMMAND             DESCRIPTION"
+					echo "help                Show this help message"
+					echo "start               Start privoxy"
+					echo "stop                Stop privoxy"
+					echo "status              Show privoxy status"
+					echo "back                Go back to the anonym8 menu"
+					echo ""
+					while [[ 1 ]]; do
+						read -p "Automater/anonsurf/privoxy>>>" command
+						if [[ $command = "help" ]]; then
+							echo "Start and stop proxy tunnel through privoxy"
+							echo ""
+							echo "COMMAND             DESCRIPTION"
+							echo "help                Show this help message"
+							echo "start               Start privoxy"
+							echo "stop                Stop privoxy"
+							echo "status              Show privoxy status"
+							echo "back                Go back to the anonym8 menu"
+							echo ""
+						elif [[ $command = "start" ]]; then
+							echo "[+] Executing the command: anonym8 start_privoxy"
+							eval "anonym8 start_privoxy"
+						elif [[ $command = "stop" ]]; then
+							echo "[+] Executing the command: anonym8 stop_privoxy"
+							eval "anonym8 stop_privoxy"
+						elif [[ $command = "status" ]]; then
+							echo "[+] Executing the command: anonym8 status_privoxy"
+							eval "anonym8 status_privoxy"
+						elif [[ $command = "back" ]]; then
+							clear
+							figlet -f banner anonym8
+							echo "Full anonymize your system"
+							echo ""
+							echo "COMMAND             DESCRIPTION"
+							echo "help                Show this help message"
+							echo "show modules        Shows the modules"
+							echo "use <MODULE>        Use the <MODULE>"
+							echo "back                Go back to the main menu"
+							echo ""
+							break
+						fi
+					done
+				elif [[ $module = "polipo" ]]; then
+					clear
+					figlet -f banner anonsurf
+					echo "------------------------POLIPO-------------------------"
+					echo "Start and stop proxy tunnel through polipo"
+					echo ""
+					echo "COMMAND             DESCRIPTION"
+					echo "help                Show this help message"
+					echo "start               Start polipo"
+					echo "stop                Stop polipo"
+					echo "status              Show polipo status"
+					echo "back                Go back to the anonym8 menu"
+					echo ""
+					while [[ 1 ]]; do
+						read -p "Automater/anonsurf/polipo>>>" command
+						if [[ $command = "help" ]]; then
+							echo "Start and stop proxy tunnel through polipo"
+							echo ""
+							echo "COMMAND             DESCRIPTION"
+							echo "help                Show this help message"
+							echo "start               Start polipo"
+							echo "stop                Stop polipo"
+							echo "status              Show polipo status"
+							echo "back                Go back to the anonym8 menu"
+							echo ""
+						elif [[ $command = "start" ]]; then
+							echo "[+] Executing the command: anonym8 start_polipo"
+							eval "anonym8 start_polipo"
+						elif [[ $command = "stop" ]]; then
+							echo "[+] Executing the command: anonym8 stop_polipo"
+							eval "anonym8 stop_polipo"
+						elif [[ $command = "status" ]]; then
+							echo "[+] Executing the command: anonym8 status_polipo"
+							eval "anonym8 status_polipo"
+						elif [[ $command = "back" ]]; then
+							clear
+							figlet -f banner anonym8
+							echo "Full anonymize your system"
+							echo ""
+							echo "COMMAND             DESCRIPTION"
+							echo "help                Show this help message"
+							echo "show modules        Shows the modules"
+							echo "use <MODULE>        Use the <MODULE>"
+							echo "back                Go back to the main menu"
+							echo ""
+							break
+						fi
+					done
+				elif [[ $module = "macchanger" ]]; then
+					clear
+					figlet -f banner anonsurf
+					echo "-----------------------MACCHANGER----------------------"
+					echo "Change and restore mac address with macchanger"
+					echo ""
+					echo "COMMAND             DESCRIPTION"
+					echo "help                Show this help message"
+					echo "start               Start macchanger"
+					echo "stop                Stop macchanger"
+					echo "status              Show macchanger status"
+					echo "back                Go back to the anonym8 menu"
+					echo ""
+					while [[ 1 ]]; do
+						read -p "Automater/anonsurf/macchanger>>>" command
+						if [[ $command = "help" ]]; then
+							echo "Change and restore mac address with macchanger"
+							echo ""
+							echo "COMMAND             DESCRIPTION"
+							echo "help                Show this help message"
+							echo "start               Start macchanger"
+							echo "stop                Stop macchanger"
+							echo "status              Show macchanger status"
+							echo "back                Go back to the anonym8 menu"
+							echo ""
+						elif [[ $command = "start" ]]; then
+							echo "[+] Executing the command: anonym8 start_mac"
+							eval "anonym8 start_mac"
+						elif [[ $command = "stop" ]]; then
+							echo "[+] Executing the command: anonym8 stop_mac"
+							eval "anonym8 stop_mac"
+						elif [[ $command = "status" ]]; then
+							echo "[+] Executing the command: anonym8 stop_mac"
+							eval "anonym8 stop_mac"
+						elif [[ $command = "back" ]]; then
+							clear
+							figlet -f banner anonym8
+							echo "Full anonymize your system"
+							echo ""
+							echo "COMMAND             DESCRIPTION"
+							echo "help                Show this help message"
+							echo "show modules        Shows the modules"
+							echo "use <MODULE>        Use the <MODULE>"
+							echo "back                Go back to the main menu"
+							echo ""
+							break
+						fi
+					done
+				elif [[ $module = "hostname" ]]; then
+					clear
+					figlet -f banner anonsurf
+					echo "-----------------------HOSTNAME------------------------"
+					echo "Change and restore hostname"
+					echo ""
+					echo "COMMAND             DESCRIPTION"
+					echo "help                Show this help message"
+					echo "change              Randomly spoofing Hostname"
+					echo "restore             Restore default Hostname"
+					echo "status              Show current hostname"
+					echo "back                Go back to the anonym8 menu"
+					echo ""
+					while [[ 1 ]]; do
+						read -p "Automater/anonsurf/hostname>>>" command
+						if [[ $command = "help" ]]; then
+							echo "Change and restore hostname"
+							echo ""
+							echo "COMMAND             DESCRIPTION"
+							echo "help                Show this help message"
+							echo "change              Randomly spoofing Hostname"
+							echo "restore             Restore default Hostname"
+							echo "status              Show current hostname"
+							echo "back                Go back to the anonym8 menu"
+							echo ""
+						elif [[ $command = "change" ]]; then
+							echo "[+] Executing the command: anonym8 change_hostname"
+							eval "anonym8 change_hostname"
+						elif [[ $command = "restore" ]]; then
+							echo "[+] Executing the command: anonym8 restore_hostname"
+							eval "anonym8 restore_hostname"
+						elif [[ $command = "status" ]]; then
+							echo "[+] Executing the command: anonym8 status_hostname"
+							eval "anonym8 status_hostname"
+						elif [[ $command = "back" ]]; then
+							clear
+							figlet -f banner anonym8
+							echo "Full anonymize your system"
+							echo ""
+							echo "COMMAND             DESCRIPTION"
+							echo "help                Show this help message"
+							echo "show modules        Shows the modules"
+							echo "use <MODULE>        Use the <MODULE>"
+							echo "back                Go back to the main menu"
+							echo ""
+							break
+						fi
+					done
+				fi
+			fi
+		done
+	elif [[ $input = "21" ]]; then
+		clear
+		figlet -f banner anonsurf
+		echo "Anonymize the entire system under tor using iptables"
+		echo ""
+		echo "COMMAND             DESCRIPTION"
+		echo "help                Show this help message"
+		echo "start               Start anonsurf"
+		echo "stop                Stop anonsurf"
+		echo "restart             Restart anonsurf"
+		echo "change              Change Tor identity"
+		echo "status              Show anonsurf status"
+		echo "back                Go back to the main menu"
+		echo ""
+		while [[ 1 ]]; do
+			read -p "Automater/anonsurf>>>" command
+			if [[ $command = "help" ]]; then
+				echo "anonymize the entire system under tor using iptables"
+				echo ""
+				echo "COMMAND             DESCRIPTION"
+				echo "help                Show this help message"
+				echo "start               Start anonsurf"
+				echo "stop                Stop anonsurf"
+				echo "restart             Restart anonsurf"
+				echo "change              Change Tor identity"
+				echo "status              Show anonsurf status"
+				echo "back                Go back to the main menu"
+				echo ""
+			elif [[ $command = "start" ]]; then
+				echo "[+] Executing the command: anonsurf start"
+				eval "anonsurf start"
+			elif [[ $command = "stop" ]]; then
+				echo "[+] Executing the command: anonsurf stop"
+				eval "anonsurf stop"
+			elif [[ $command = "restart" ]]; then
+				echo "[+] Executing the command: anonsurf restart"
+				eval "anonsurf restart"
+			elif [[ $command = "change" ]]; then
+				echo "[+] Executing the command: anonsurf change"
+				eval "anonsurf change"
+			elif [[ $command = "status" ]]; then
+				echo "[+] Executing the command: anonsurf status"
+				eval "anonsurf status"
+			elif [[ $command = "back" ]]; then
+				break
+			fi
+		done
+	elif [[ $input = "22" ]]; then
+		clear
+		figlet -f banner steghide
+		echo "Embed/extract secret message in/from a picture."
+		echo ""
+		echo "COMMAND             DESCRIPTION"
+		echo "help                Show this help message"
+		echo "show modules        Shows the modules"
+		echo "use <MODULE>        Use the <MODULE>"
+		echo "back                Go back to the main menu"
+		echo ""
+		while [[ 1 ]]; do
+			read -p "Automater/steghide>>>" command
+			if [[ $command = "help" ]]; then
+				echo "Embed/extract secret message in/from a picture."
+				echo ""
+				echo "COMMAND             DESCRIPTION"
+				echo "help                Show this help message"
+				echo "show modules        Shows the modules"
+				echo "use <MODULE>        Use the <MODULE>"
+				echo "back                Go back to the main menu"
+				echo ""
+			elif [[ $command = "show modules" ]]; then
+				echo "MODULE              DESCRIPTION"
+				echo "embed               Hide a secret message in a picture"
+				echo "extract             Excrat a secret message from a picture"
+				echo "info                Inspect a file"
+				echo ""
+			elif [[ $command = *"use"* ]]; then
+				module=${command/#"use "}
+				if [[ $module = "embed" ]]; then
+					clear
+					figlet -f banner steghide
+					echo "----------------------EMBED----------------------"
+					picture=""
+					message=""
+					echo "Hide a secret message in a picture"
+					echo ""
+					echo "COMMAND             DESCRIPTION"
+					echo "help                Show this help message"
+					echo "show options        Shows the values to set"
+					echo "set <OPTION>        Set the value of the <OPTION>"
+					echo "execute             Execute the tool"
+					echo "back                Go back to the steghide menu"
+					echo ""
+					while [[ 1 ]]; do
+						read -p "Automater/steghide/embed>>>" command
+						if [[ $command = "help" ]]; then
+							echo "Hide a secret message in a picture"
+							echo ""
+							echo "COMMAND             DESCRIPTION"
+							echo "help                Show this help message"
+							echo "show options        Shows the values to set"
+							echo "set <OPTION>        Set the value of the <OPTION>"
+							echo "execute             Execute the tool"
+							echo "back                Go back to the steghide menu"
+							echo ""
+						elif [[ $command = "show options" ]]; then
+							echo "OPTION              REQUIRED              CURRENT VALUE"
+							echo "picture             yes                   $picture"
+							echo "message             yes                   $message"
+							echo ""
+						elif [[ $command = *"set"* ]]; then
+							module=${command/#"set "}
+							if [[ $module = *"picture"* ]]; then
+								picture=${module/#"picture "}
+								echo "picture ==> $picture"
+							elif [[ $module = *"message"* ]]; then
+								message=${module/#"message "}
+								echo "message ==> $message"
+							fi
+						elif [[ $command = "execute" ]]; then
+							echo "[+] Executing the command: steghide embed -cf $picture -ef $message"
+							eval "steghide embed -cf $picture -ef $message"
+						elif [[ $command = "back" ]]; then
+							clear
+							figlet -f banner steghide
+							echo "Embed/extract secret message in/from a picture."
+							echo ""
+							echo "COMMAND             DESCRIPTION"
+							echo "help                Show this help message"
+							echo "show modules        Shows the modules"
+							echo "use <MODULE>        Use the <MODULE>"
+							echo "back                Go back to the main menu"
+							echo ""
+							break
+						fi
+					done
+				elif [[ $module = "extract" ]]; then
+					clear
+					figlet -f banner steghide
+					echo "---------------------EXTRACT---------------------"
+					picture=""
+					echo "Extract a secret message from a picture"
+					echo ""
+					echo "COMMAND             DESCRIPTION"
+					echo "help                Show this help message"
+					echo "show options        Shows the values to set"
+					echo "set <OPTION>        Set the value of the <OPTION>"
+					echo "execute             Execute the tool"
+					echo "back                Go back to the steghide menu"
+					echo ""
+					while [[ 1 ]]; do
+						read -p "Automater/steghide/extract>>>" command
+						if [[ $command = "help" ]]; then
+							echo "Extract a secret message from a picture"
+							echo ""
+							echo "COMMAND             DESCRIPTION"
+							echo "help                Show this help message"
+							echo "show options        Shows the values to set"
+							echo "set <OPTION>        Set the value of the <OPTION>"
+							echo "execute             Execute the tool"
+							echo "back                Go back to the steghide menu"
+							echo ""
+						elif [[ $command = "show options" ]]; then
+							echo "OPTION              REQUIRED              CURRENT VALUE"
+							echo "picture             yes                   $picture"
+							echo ""
+						elif [[ $command = *"set"* ]]; then
+							module=${command/#"set "}
+							if [[ $module = *"picture"* ]]; then
+								picture=${module/#"picture "}
+								echo "picture ==> $picture"
+							fi
+						elif [[ $command = "execute" ]]; then
+							echo "[+] Executing the command: steghide extract -sf $picture"
+							eval "steghide extract -sf $picture"
+						elif [[ $command = "back" ]]; then
+							clear
+							figlet -f banner steghide
+							echo "Embed/extract secret message in/from a picture."
+							echo ""
+							echo "COMMAND             DESCRIPTION"
+							echo "help                Show this help message"
+							echo "show modules        Shows the modules"
+							echo "use <MODULE>        Use the <MODULE>"
+							echo "back                Go back to the main menu"
+							echo ""
+							break
+						fi
+					done
+				elif [[ $module = "info" ]]; then
+					clear
+					figlet -f banner steghide
+					echo "----------------------INFO-----------------------"
+					file=""
+					echo "Inspect a file"
+					echo ""
+					echo "COMMAND             DESCRIPTION"
+					echo "help                Show this help message"
+					echo "show options        Shows the values to set"
+					echo "set <OPTION>        Set the value of the <OPTION>"
+					echo "execute             Execute the tool"
+					echo "back                Go back to the steghide menu"
+					echo ""
+					while [[ 1 ]]; do
+						read -p "Automater/steghide/info>>>" command
+						if [[ $command = "help" ]]; then
+							echo "Inspect a file"
+							echo ""
+							echo "COMMAND             DESCRIPTION"
+							echo "help                Show this help message"
+							echo "show options        Shows the values to set"
+							echo "set <OPTION>        Set the value of the <OPTION>"
+							echo "execute             Execute the tool"
+							echo "back                Go back to the steghide menu"
+							echo ""
+						elif [[ $command = "show options" ]]; then
+							echo "OPTION              REQUIRED              CURRENT VALUE"
+							echo "file                yes                   $file"
+							echo ""
+						elif [[ $command = *"set"* ]]; then
+							module=${command/#"set "}
+							if [[ $module = *"file"* ]]; then
+								file=${module/#"file "}
+								echo "file ==> $file"
+							fi
+						elif [[ $command = "execute" ]]; then
+							echo "[+] Executing the command: steghide info $file"
+							eval "steghide info $file"
+						elif [[ $command = "back" ]]; then
+							clear
+							figlet -f banner steghide
+							echo "Embed/extract secret message in/from a picture."
+							echo ""
+							echo "COMMAND             DESCRIPTION"
+							echo "help                Show this help message"
+							echo "show modules        Shows the modules"
+							echo "use <MODULE>        Use the <MODULE>"
+							echo "back                Go back to the main menu"
+							echo ""
+							break
+						fi
+					done	
+				fi
+			elif [[ $command = "back" ]]; then
+				break
+			fi
+		done
 	elif [[ $input = "update" ]]; then
 		apt update
 		apt full-upgrade -y && apt dist-upgrade -y && apt autoremove -y
 	elif [[ $input = "install" ]]; then
 		apt update
-		apt install -y python3 python2 metagoofil dmitry whois hping3 nmap nikto wafw00f lbd weevely wpscan httrack sqlmap hydra aircrack-ng apktool git tor figlet
-		pip install beautifulsoup4 bs4
+		apt install -y python3 python2 metagoofil dmitry whois hping3 nmap nikto wafw00f lbd weevely wpscan john steghide httrack sqlmap hydra medusa crunch aircrack-ng apktool git tor figlet
+		pip install beautifulsoup4 bs4 pysimplegui
+		pip install -r Tools/sqlmate/requirements.txt
+		bash Tools/kali-anonsurf/installer.sh
+		bash Tools/anonym8/INSTALL.sh
 	elif [[ $input = "ip" ]]; then
 		echo "INTERNAL IP: "; ifconfig
 		echo "EXTERNAL IP: "; curl ipecho.net/plain ; echo
@@ -2057,4 +3057,3 @@ while [[ 1 ]]; do
 		break
 	fi
 done
-#gio open "link"
